@@ -16,8 +16,7 @@ def index():
     # search_url = "https://api.gettyimages.com:443/v3/search/images?phrase=astronomy&number_of_people=none"
     #api key
 
-    headers1 = {'Api-Key': '42hg9wahfqwvspm4dwa2vs7g'}
-    # headers1 = {'Api-Key': os.getenv("getty_key")}
+    headers1 = {'Api-Key': os.getenv("getty_key")}
 
     #result of image search
     result = requests.get(search_url, headers=headers1)
@@ -33,16 +32,11 @@ def index():
 
 #****************************************************************************************************      
     
-    #keys and access token
-    con_key = "qit0BAiTrTwmBsJ3AOpQnenGZ"
-    sec_con_key = "reVX2c8hiJhT8rY5bXVMV0lrrtXyjHcLonYynmtHJECAMB5KIY"
-    acc_token = "824355548501987328-slJGgxFlWbfetxRZdN3iutYTA21tg7v"
-    acc_token_sec = "8L8HuqrVJY9ZM9ezb8R2NaCw2kmEBTJRHO82Js98JCnrp"
     
-    # con_key = os.getenv("twitterkey")
-    # sec_con_key = os.getenv("twitterkey_sec")
-    # acc_token = os.getenv("twitter_token")
-    # acc_token_sec = os.getenv("twitter_token_sec")
+    con_key = os.getenv("twitterkey")
+    sec_con_key = os.getenv("twitterkey_sec")
+    acc_token = os.getenv("twitter_token")
+    acc_token_sec = os.getenv("twitter_token_sec")
     
     users = ['experiencedquot', 'QuotesDetail', '_Famouss_Quotes', 'quotedefamous', 'motivational', 'philosophy_muse']
     user = random.choice(users)

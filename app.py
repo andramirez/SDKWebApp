@@ -8,7 +8,7 @@ app = flask.Flask(__name__)
 
 def index():
 #****************************************************GITHUB****************************************
-    phrases = ['nature', 'sky']
+    phrases = ['nature', 'sky', 'galaxy', 'miracle']
     phrase = random.choice(phrases)
     #search url to bring up certain images based on query
     search_url="https://api.gettyimages.com:443/v3/search/images?exclude_nudity=true&file_types=jpg&minimum_size=large&orientations=Horizontal&sort_order=best_match&number_of_people=none&phrase=" + phrase
@@ -30,12 +30,13 @@ def index():
 
 #****************************************************************************************************      
     
-    
+    #twitter API keys and tokens
     con_key = os.getenv("twitterkey")
     sec_con_key = os.getenv("twitterkey_sec")
     acc_token = os.getenv("twitter_token")
     acc_token_sec = os.getenv("twitter_token_sec")
     
+    #twitter user names
     users = ['experiencedquot', 'QuotesDetail', '_Famouss_Quotes', 'quotedefamous', 'motivational', 'philosophy_muse']
     user = random.choice(users)
     

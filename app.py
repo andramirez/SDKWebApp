@@ -1,4 +1,4 @@
-import flask, random, os, tweepy, json, requests, time
+import flask, random, os, tweepy, json, requests
 
 app = flask.Flask(__name__)
 
@@ -12,8 +12,11 @@ def index():
     phrase = random.choice(phrases)
     #search url to bring up certain images based on query
     search_url="https://api.gettyimages.com:443/v3/search/images?exclude_nudity=true&file_types=jpg&minimum_size=large&orientations=Horizontal&sort_order=best_match&number_of_people=none&phrase=" + phrase
+    
+    # search_url = "https://api.gettyimages.com:443/v3/search/images?phrase=star%20trek%20the%20original%20series"
     #api key
-    headers1 = {'Api-Key' : '42hg9wahfqwvspm4dwa2vs7g'}
+    # key = os.getenv("getty_key")
+    headers1 = {'Api-Key': '42hg9wahfqwvspm4dwa2vs7g'}
     #result of image search
     result = requests.get(search_url, headers=headers1)
     #result in json to get page ID
@@ -29,10 +32,10 @@ def index():
 #****************************************************************************************************      
     
     #keys and access token
-    con_key = 'qit0BAiTrTwmBsJ3AOpQnenGZ'
-    sec_con_key = 'reVX2c8hiJhT8rY5bXVMV0lrrtXyjHcLonYynmtHJECAMB5KIY'
-    acc_token = '824355548501987328-slJGgxFlWbfetxRZdN3iutYTA21tg7v'
-    acc_token_sec = '8L8HuqrVJY9ZM9ezb8R2NaCw2kmEBTJRHO82Js98JCnrp'
+    con_key = "qit0BAiTrTwmBsJ3AOpQnenGZ"
+    sec_con_key = "reVX2c8hiJhT8rY5bXVMV0lrrtXyjHcLonYynmtHJECAMB5KIY"
+    acc_token = "824355548501987328-slJGgxFlWbfetxRZdN3iutYTA21tg7v"
+    acc_token_sec = "8L8HuqrVJY9ZM9ezb8R2NaCw2kmEBTJRHO82Js98JCnrp"
     
     users = ['experiencedquot', 'QuotesDetail', '_Famouss_Quotes', 'quotedefamous', 'motivational', 'philosophy_muse']
     user = random.choice(users)

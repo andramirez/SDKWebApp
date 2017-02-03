@@ -1,7 +1,7 @@
 .container {
     margin: 0 auto;
     border-radius: 25px;
-    padding: 30px;
+    padding: 20px;
     background-color: rgba(190, 190, 190, .5);
     position: absolute;
     left: 23%;
@@ -11,11 +11,18 @@
 }
 .text { 
     font-family: 'Times New Roman', serif; 
-    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    text-shadow: -1px 0 teal, 0 1px teal, 1px 0 teal, 0 -1px teal;
     margin: 0;
     padding: 10px;
     opacity: 100%;
     font-size: 48px;
-
-    
+}
+.source{
+    color: white;
+    font-family: 'Times New Roman', serif; 
+    text-shadow: -1px 0 teal, 0 1px teal, 1px 0 teal, 0 -1px teal;
+    margin: 0;
+    padding: 10px;
+    opacity: 100%;
+    font-size: 48px;
 }

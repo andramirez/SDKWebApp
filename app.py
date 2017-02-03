@@ -13,9 +13,7 @@ def index():
     #search url to bring up certain images based on query
     search_url="https://api.gettyimages.com:443/v3/search/images?exclude_nudity=true&file_types=jpg&minimum_size=large&orientations=Horizontal&sort_order=best_match&number_of_people=none&phrase=" + phrase
     
-    # search_url = "https://api.gettyimages.com:443/v3/search/images?phrase=astronomy&number_of_people=none"
-    #api key
-
+    #getty api key
     headers1 = {'Api-Key': os.getenv("getty_key")}
 
     #result of image search
@@ -46,16 +44,18 @@ def index():
     auth.set_access_token(acc_token, acc_token_sec)
     api = tweepy.API(auth, wait_on_rate_limit=True)
     
+    #REST API
     tweets = api.user_timeline( 
                                 screen_name=user,
                                 count = 200,
                                 lang = "en")
-    tweet1 = random.choice(tweets)
-    result = re.sub(r"http\S+", "", tweet1.text)
-        
+    tweet1 = random.choice(tweets) # choose random tweets
+    result = re.sub(r"http\S+", "", tweet1.text) # remove URL's from quotes
+    
+    #template returned to html page    
     return flask.render_template("index.html", text = result, author = user, image = image1) ## sends tweet and image to html page via flask
     
-    
+##Flask run app    
 app.run(
     port = int(os.getenv('PORT',8080)),
     host = os.getenv('IP','0.0.0.0'),

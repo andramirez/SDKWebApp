@@ -1,1 +1,1 @@
-web: python app.py templates/index.html static/style.css
+web: python app.py

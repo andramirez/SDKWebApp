@@ -57,7 +57,7 @@ def index():
     url = user + "/status/"+ tweet1.id_str
     
     #template returned to html page    
-    return flask.render_template("index.html", text = result, author = user, link = url, image = image1) ## sends tweet and image to html page via flask
+    return flask.render_template("index.html", text = tweet1.text, author = user, link = url, image = image1) ## sends tweet and image to html page via flask
     
 ##Flask run app    
 app.run(

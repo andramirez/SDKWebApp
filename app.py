@@ -51,7 +51,7 @@ def index():
                                 count = 200,
                                 lang = "en")
     tweet1 = random.choice(tweets) # choose random tweets
-    while tweet1.text.contains("http\S+"):
+    while "http\S+" in tweet1.text:
         tweet1 = random.choice(tweets) # choose random tweets
     
     url = user + "/status/"+ tweet1.id_str

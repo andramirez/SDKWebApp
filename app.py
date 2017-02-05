@@ -1,4 +1,4 @@
-import flask, random, os, tweepy, json, requests, re
+import flask, random, os, tweepy, json, requests
 
 app = flask.Flask(__name__)
 
@@ -51,7 +51,8 @@ def index():
                                 count = 200,
                                 lang = "en")
     tweet1 = random.choice(tweets) # choose random tweets
-    result = re.sub(r"http\S+", "", tweet1.text) # remove URL's from quotes
+    while tweet1.text.contains("http\S+"):
+        tweet1 = random.choice(tweets) # choose random tweets
     
     url = user + "/status/"+ tweet1.id_str
     

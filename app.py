@@ -53,8 +53,10 @@ def index():
     tweet1 = random.choice(tweets) # choose random tweets
     result = re.sub(r"http\S+", "", tweet1.text) # remove URL's from quotes
     
+    url = user + "/status/"+ tweet1.id_str
+    
     #template returned to html page    
-    return flask.render_template("index.html", text = result, author = tweet1.id_str, image = image1) ## sends tweet and image to html page via flask
+    return flask.render_template("index.html", text = result, author = user, link = url, image = image1) ## sends tweet and image to html page via flask
     
 ##Flask run app    
 app.run(

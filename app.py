@@ -53,11 +53,8 @@ def index():
     tweet1 = random.choice(tweets) # choose random tweets
     # if "https:\S+" in tweet1.text:
     #     tweet1 = random.choice(tweets) # choose random tweets
-    while True:
-        if "https" in tweet1.text:
-            tweet1 = random.choice(tweets) # choose random tweets
-        else:
-            False
+    while "http" in tweet1.text:
+        tweet1 = random.choice(tweets) # choose random tweets
     
     url = user + "/status/"+ tweet1.id_str
     

@@ -54,7 +54,7 @@ def index():
     result = re.sub(r"http\S+", "", tweet1.text) # remove URL's from quotes
     
     #template returned to html page    
-    return flask.render_template("index.html", text = result, author = user, image = image1) ## sends tweet and image to html page via flask
+    return flask.render_template("index.html", text = result, author = tweet1.id_str, image = image1) ## sends tweet and image to html page via flask
     
 ##Flask run app    
 app.run(

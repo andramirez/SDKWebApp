@@ -6,7 +6,7 @@ app = flask.Flask(__name__)
 
 def index():
 #****************************************************GITHUB****************************************
-    phrases = ['Stephen%20King', 'JK%20Rowling', 'Mark%20Twain', 'Aldous%20Huxley', 'dr%20seuss']
+    phrases = ['Stephen%20King', 'JK%20Rowling', 'william%20Shakespear', 'Aldous%20Huxley', 'dr%20seuss']
     
     phrase = random.choice(phrases)
     #search url to bring up certain images based on query

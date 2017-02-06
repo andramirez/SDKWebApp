@@ -5,17 +5,25 @@ app = flask.Flask(__name__)
 @app.route('/')
 
 
-
+def image_quote(phrase):
+        if 'Stephen%20King' in phrase: 
+            return 'S_KingQuotes'
+        if 'JK%20Rowling' in phrase:
+            return 'jkrowlingquotes'
+        if 'Mark%20Twain' in phrase:
+            return 'Mark_Twain_Bot'
+        if 'Aldous%20Huxley' in phrase: 
+            return 'AHuxleyQuote'
+        if 'CS%20Lewis' in phrase:
+            return'CSLewisQuots'
+        
 def index():
 #****************************************************GITHUB****************************************
-    # phrases = ['nature', 'sky', 'galaxy', 'aquarium', 'ocean']
-    phrase = 'Stephen%20King'
-
-    # phrase = random.choice(phrases)
+    phrases = ['Stephen%20King', 'JK%20Rowling', 'Mark%20Twain', 'Aldous%20Huxley', 'CS%20Lewis']
+    
+    phrase = random.choice(phrases)
     #search url to bring up certain images based on query
     search_url="https://api.gettyimages.com:443/v3/search/images?exclude_nudity=true&file_types=jpg&minimum_size=large&orientations=Horizontal&sort_order=best_match&phrase=" + phrase
-    # search_url="https://api.gettyimages.com:443/v3/search/images?exclude_nudity=true&file_types=jpg&minimum_size=large&orientations=Horizontal&sort_order=best_match&number_of_people=none&phrase=" + phrase
-
 
     #getty api key
     headers1 = {'Api-Key': os.getenv("getty_key")}
@@ -41,9 +49,8 @@ def index():
     acc_token_sec = os.getenv("twitter_token_sec")
     
     #twitter user names
-    users = ['SKing_Quotes', 'S_KingQuotes']
-    # users = ['experiencedquot', 'QuotesDetail', '_Famouss_Quotes', 'quotedefamous', 'motivational', 'philosophy_muse', 'Quote_Ocean', 'quuootteessss']
-    user = random.choice(users)
+    user = image_quote(phrase)
+        
     
     #tweepy config
     auth = tweepy.OAuthHandler(con_key, sec_con_key)

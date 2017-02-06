@@ -40,8 +40,9 @@ def index():
             user = 'S_KingQuotes'
     if 'JK%20Rowling' in phrase:
         user = 'jkrowlingquotes'
-    if 'Mark%20Twain' in phrase:
-        user = 'Mark_Twain_Bot'
+    if 'william%20Shakespear' in phrase:
+        users = ['DailyShakes', 'Wwm_Shakespeare']
+        user = random.choice(users)
     if 'Aldous%20Huxley' in phrase: 
         user = 'AHuxleyQuote'
     if 'dr%20seuss' in phrase:

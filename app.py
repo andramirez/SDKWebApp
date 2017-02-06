@@ -41,7 +41,7 @@ def index():
     acc_token_sec = os.getenv("twitter_token_sec")
     
     #twitter user names
-    users = ['SKing_Quotes', 'S_KingQuotes', 'StephenKingQuot']
+    users = ['SKing_Quotes', 'S_KingQuotes']
     # users = ['experiencedquot', 'QuotesDetail', '_Famouss_Quotes', 'quotedefamous', 'motivational', 'philosophy_muse', 'Quote_Ocean', 'quuootteessss']
     user = random.choice(users)
     

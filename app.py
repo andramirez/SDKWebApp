@@ -9,14 +9,10 @@ app = flask.Flask(__name__)
 def index():
 #****************************************************GITHUB****************************************
     phrases = ['nature', 'sky', 'galaxy', 'aquarium', 'ocean']
-    # phrase = 'Stephen%20King'
-
     phrase = random.choice(phrases)
     #search url to bring up certain images based on query
-    # search_url="https://api.gettyimages.com:443/v3/search/images?exclude_nudity=true&file_types=jpg&minimum_size=large&orientations=Horizontal&sort_order=best_match&phrase=" + phrase
     search_url="https://api.gettyimages.com:443/v3/search/images?exclude_nudity=true&file_types=jpg&minimum_size=large&orientations=Horizontal&sort_order=best_match&number_of_people=none&phrase=" + phrase
-
-
+    
     #getty api key
     headers1 = {'Api-Key': os.getenv("getty_key")}
 
@@ -41,8 +37,7 @@ def index():
     acc_token_sec = os.getenv("twitter_token_sec")
     
     #twitter user names
-    users = ['SKing_Quotes', 'S_KingQuotes', 'StephenKingQuot']
-    # users = ['experiencedquot', 'QuotesDetail', '_Famouss_Quotes', 'quotedefamous', 'motivational', 'philosophy_muse', 'Quote_Ocean', 'quuootteessss']
+    users = ['experiencedquot', 'QuotesDetail', '_Famouss_Quotes', 'quotedefamous', 'motivational', 'philosophy_muse', 'Quote_Ocean', 'quuootteessss']
     user = random.choice(users)
     
     #tweepy config
@@ -58,7 +53,7 @@ def index():
     tweet1 = random.choice(tweets) # choose random tweets
     # if "https:\S+" in tweet1.text:
     #     tweet1 = random.choice(tweets) # choose random tweets
-    while "http" or "@" in tweet1.text:
+    while "http" in tweet1.text:
         tweet1 = random.choice(tweets) # choose random tweets
     
     url = user + "/status/"+ tweet1.id_str

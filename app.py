@@ -37,7 +37,7 @@ def index():
     
     #twitter user names
     if 'Stephen%20King' in phrase: 
-            user = 'S_KingQuotes'
+        user = 'S_KingQuotes'
     if 'JK%20Rowling' in phrase:
         user = 'jkrowlingquotes'
     if 'william%20Shakespear' in phrase:

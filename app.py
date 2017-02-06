@@ -4,19 +4,6 @@ app = flask.Flask(__name__)
 
 @app.route('/')
 
-
-def image_quote(phrase):
-        if 'Stephen%20King' in phrase: 
-            return 'S_KingQuotes'
-        if 'JK%20Rowling' in phrase:
-            return 'jkrowlingquotes'
-        if 'Mark%20Twain' in phrase:
-            return 'Mark_Twain_Bot'
-        if 'Aldous%20Huxley' in phrase: 
-            return 'AHuxleyQuote'
-        if 'CS%20Lewis' in phrase:
-            return'CSLewisQuots'
-        
 def index():
 #****************************************************GITHUB****************************************
     phrases = ['Stephen%20King', 'JK%20Rowling', 'Mark%20Twain', 'Aldous%20Huxley', 'CS%20Lewis']
@@ -49,7 +36,16 @@ def index():
     acc_token_sec = os.getenv("twitter_token_sec")
     
     #twitter user names
-    user = image_quote(phrase)
+    if 'Stephen%20King' in phrase: 
+            user = 'S_KingQuotes'
+    if 'JK%20Rowling' in phrase:
+        user = 'jkrowlingquotes'
+    if 'Mark%20Twain' in phrase:
+        user = 'Mark_Twain_Bot'
+    if 'Aldous%20Huxley' in phrase: 
+        user = 'AHuxleyQuote'
+    if 'CS%20Lewis' in phrase:
+        user = 'CSLewisQuots'
         
     
     #tweepy config

@@ -9,9 +9,9 @@ app = flask.Flask(__name__)
 def index():
 #****************************************************GITHUB****************************************
     # phrases = ['nature', 'sky', 'galaxy', 'aquarium', 'ocean']
-    phrases = ['Stephen%20King']
+    phrase = 'Stephen%20King'
 
-    phrase = random.choice(phrases)
+    # phrase = random.choice(phrases)
     #search url to bring up certain images based on query
     search_url="https://api.gettyimages.com:443/v3/search/images?exclude_nudity=true&file_types=jpg&minimum_size=large&orientations=Horizontal&sort_order=best_match&&phrase=" + phrase
     # search_url="https://api.gettyimages.com:443/v3/search/images?exclude_nudity=true&file_types=jpg&minimum_size=large&orientations=Horizontal&sort_order=best_match&number_of_people=none&phrase=" + phrase

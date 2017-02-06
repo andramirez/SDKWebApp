@@ -6,7 +6,7 @@ app = flask.Flask(__name__)
 
 def index():
 #****************************************************GITHUB****************************************
-    phrases = ['Stephen%20King', 'JK%20Rowling', 'Mark%20Twain', 'Aldous%20Huxley', 'CS%20Lewis']
+    phrases = ['Stephen%20King', 'JK%20Rowling', 'Mark%20Twain', 'Aldous%20Huxley', 'dr%20seuss']
     
     phrase = random.choice(phrases)
     #search url to bring up certain images based on query
@@ -44,8 +44,9 @@ def index():
         user = 'Mark_Twain_Bot'
     if 'Aldous%20Huxley' in phrase: 
         user = 'AHuxleyQuote'
-    if 'CS%20Lewis' in phrase:
-        user = 'CSLewisQuots'
+    if 'dr%20seuss' in phrase:
+        users = ['makelifesimmple', 'DrSeussQuotes__', 'DrSeuss_Quotes']
+        user = random.choice(users)
         
     
     #tweepy config

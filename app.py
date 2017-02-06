@@ -37,7 +37,8 @@ def index():
     
     #twitter user names
     if 'Stephen%20King' in phrase: 
-        user = 'S_KingQuotes'
+        users = ['S_KingQuotes', 'SKing_Quotes']
+        user = random.choice(users)
     if 'JK%20Rowling' in phrase:
         user = 'jkrowlingquotes'
     if 'william%20Shakespear' in phrase:

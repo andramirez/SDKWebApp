@@ -1,3 +1,16 @@
+# Name: Andrea Ramirez
+# Title: app.py (Project 1)
+# Description: This project is a Web App that uses the following toolchains: Getty Images, 
+#               Flask, c9, Github, Twitter, and Heroku to create a web page that dynamically 
+#               produces images (from Getty images) and quotes (from twitter) that are connected
+#               by an overall theme. 
+# Date: 02/06/17
+
+# Github repo: https://github.com/CSUMB-SP17-CST438/andramirez
+# C9 Workspace: https://ide.c9.io/drearam3/andramirez
+# Heroku Site: https://arcane-cove-98216.herokuapp.com/
+
+
 import flask, random, os, tweepy, json, requests
 
 app = flask.Flask(__name__)
@@ -35,7 +48,7 @@ def index():
     acc_token = os.getenv("twitter_token")
     acc_token_sec = os.getenv("twitter_token_sec")
     
-    #twitter user names
+    #twitter user names chosen by getty image search phrase
     if 'Stephen%20King' in phrase: 
         users = ['S_KingQuotes', 'SKing_Quotes']
         user = random.choice(users)
@@ -62,9 +75,8 @@ def index():
                                 count = 200,
                                 lang = "en")
     tweet1 = random.choice(tweets) # choose random tweets
-    # if "https:\S+" in tweet1.text:
-    #     tweet1 = random.choice(tweets) # choose random tweets
-    while "http" in tweet1.text:
+
+    while "http" in tweet1.text: #checks to make sure that tweet doesn't have an image
         tweet1 = random.choice(tweets) # choose random tweets
     
     url = user + "/status/"+ tweet1.id_str

@@ -17,6 +17,7 @@ app = flask.Flask(__name__)
 
 @app.route('/')
 
+
 def index():
 #****************************************************GITHUB****************************************
     phrases = ['Stephen%20King', 'JK%20Rowling', 'william%20Shakespear', 'Aldous%20Huxley', 'dr%20seuss']
